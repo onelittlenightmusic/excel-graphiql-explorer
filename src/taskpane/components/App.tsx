@@ -15,7 +15,7 @@ const client = new ApolloClient({uri});
 
 // const getSpaceConcat = (query) => query.join(' ');
 
-const getObjectValuesArray = (obj,keys) => keys.map(e => obj[e]);
+const getObjectValuesArray = (obj,keys) => keys.map(e => JSON.stringify(obj[e]));
 
 const getObjKeyArray2level = (obj) => {
   var keys = Object.keys(obj).map(k => Object.keys(obj[k][0])).reduce((acc, val) => acc.concat(val), []);
